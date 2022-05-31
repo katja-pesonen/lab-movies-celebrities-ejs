@@ -1,0 +1,23 @@
+<h2>Here are our Movies!</h2>
+
+,<div>
+    <% movies.forEach(({ title, genre, plot, cast, _id }) => { %>
+     <div style="border: 2px solid black; width: 400px; margin: 20px">
+         <img src="./images/smiley1.PNG" alt="movie image" style="width: 60px" />
+       <h4><strong> Title: <%= title %> </strong></h4>
+       <h5> Genre: <%= genre %></h5>
+       <h5> Plot: <%= plot %></h5>
+       <h5> Cast: <%= cast %></h5>
+       <br />
+         <a href="/movies/<%= _id %>/edit">Edit details</a>
+         <br />
+         <form action="/movies/<%= _id %>/delete" method="POST">
+           <button type="submit">Delete</button>
+         </form>
+        </div>
+     <% }) %>
+     <br />
+ </div>
+ <br />
+
+

@@ -1,0 +1,20 @@
+<h2>Here are our Celebrities!</h2>
+
+,<div>
+    <% celebrities.forEach(({ name, occupation, catchPhrase, _id }) => { %>
+     <div style="border: 2px solid black; width: 400px; margin: 20px">
+         <img src="./images/smiley1.PNG" alt="celeb image" style="width: 60px" />
+       <h4><strong> Name: <%= name %> </strong></h4>
+       <h5>Occupation: <%= occupation %></h5>
+       <h5>Catchhrase: <%= catchPhrase %></h5>
+       <br />
+         <a href="/celebrities/<%= _id %>/edit">Edit details</a>
+         <br />
+         <form action="/celebrities/<%= _id %>/delete" method="POST">
+           <button type="submit">Delete</button>
+         </form>
+        </div>
+     <% }) %>
+     <br />
+ </div>
+ <br />
