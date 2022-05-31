@@ -9,6 +9,7 @@
        <h5> Plot: <%= plot %></h5>
        <h5> Cast: <%= cast %></h5>
        <br />
+       <a href="/movie-details/<%= _id %>">View details</a>
          <a href="/movies/<%= _id %>/edit">Edit details</a>
          <br />
          <form action="/movies/<%= _id %>/delete" method="POST">

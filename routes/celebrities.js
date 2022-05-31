@@ -26,12 +26,16 @@ router.get('/create',  (req, res, next) => {
   
   // Iteration #3: Add a new celebrity POST
   router.post('/create', async (req, res, next) => {
-    
-    const newCeleb = await CelebrityModel.create(req.body)
+    try {
+     await CelebrityModel.create(req.body)
     res.redirect('/celebrities' )
-  
+  } catch (error) {
+    res.redirect('/celebrities/create')
+    console.log('error ', error)
+  }
   });
   
+
   router.get('/celebrities/:celebId', async (req, res) => {
     const celebrity = await CelebrityModel.findById(req.params.celebId)
     const data = { celebrity }
